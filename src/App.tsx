@@ -17,13 +17,15 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1 className="bg-red-400">Vega IT practice application,</h1>
+    <main className="bg-background min-h-screen p-10">
+      <h1 className="text-primary text-center text-4xl font-bold mb-6">Vega IT demo app</h1>
 
-      {products.map((product) => (
-        <Card key={product.id} {...product} />
-      ))}
-    </div>
+      <div className="flex flex-wrap justify-center gap-6 p-6 bg-background min-h-screen">
+        {products.map((product) => (
+          <Card key={product.id} {...product} />
+        ))}
+      </div>
+    </main>
   );
 }
 
