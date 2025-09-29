@@ -1,6 +1,8 @@
-import React from "react";
+import type { Product } from "../types";
 
-function Card({ title, category, price, image }) {
+type CardProps = Pick<Product, "title" | "category" | "price" | "image">;
+
+function Card({ title, category, price, image }: CardProps) {
   return (
     <div className="bg-white size-80 border border-gray-300 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col ">
       <img

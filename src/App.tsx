@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
+import type { Product } from "./types";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   // only runs on first render to fetch data then pass it down via props
   useEffect(() => {
     async function fetchProducts() {
       const res = await fetch("https://fakestoreapi.com/products");
-      const data = await res.json();
+      const data: Product[] = await res.json();
       console.log(data);
       setProducts(data);
     }
